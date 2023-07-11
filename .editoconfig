@@ -1,0 +1,25 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{astro,css,js,jsx,ts,tsx,yml}]
+charset = utf-8
+
+[*.{json,svg}]
+trim_trailing_whitespace = false
+
+# Ignore everything in node_modules
+[{.git,node_modules}/**]
+insert_final_newline = unset
+trim_trailing_whitespace = unset
