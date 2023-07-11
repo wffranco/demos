@@ -2,4 +2,4 @@
 
 ### Tailwind CSS
 
-https://play.tailwindcss.com/WpcpTo9oMh?file=css
+https://play.tailwindcss.com/WpcpTo9oMh
