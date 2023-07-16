@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Component</title>
+  <script src="./web-components/collapse.js" defer></script>
+  <style>
+    .accordion-list {
+      border: 1px solid;
+    }
+    .accordion:not(:first-child) {
+      border-top: 1px solid;
+    }
+    [slot=header] {
+      display: block;
+      padding: 1em;
+    }
+    .content {
+      border-top: 1px solid;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h3>Named (related)</h3>
+  <div class="accordion-list">
+    <collapse-wrapper class="accordion" name="test" placeholder="Header">
+      <div slot="header">Header</div>
+      <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, voluptatibus aspernatur? Sed vitae natus sequi amet voluptate sunt asperiores, quia quasi. Labore obcaecati quidem, nam quasi saepe ipsam culpa libero!
+      </div>
+    </collapse-wrapper>
+    <collapse-wrapper class="accordion" name="test" placeholder="Header">
+      <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, voluptatibus aspernatur? Sed vitae natus sequi amet voluptate sunt asperiores, quia quasi. Labore obcaecati quidem, nam quasi saepe ipsam culpa libero!
+      </div>
+    </collapse-wrapper>
+    <collapse-wrapper class="accordion" name="test">
+      <span slot="header">Header</span>
+      <div class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt dolor magnam neque ea cupiditate, corrupti ratione accusantium quidem aspernatur deleniti sunt itaque, sequi quae animi quibusdam ex enim placeat suscipit!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt dolor magnam neque ea cupiditate, corrupti ratione accusantium quidem aspernatur deleniti sunt itaque, sequi quae animi quibusdam ex enim placeat suscipit!
+      </div>
+    </collapse-wrapper>
+  </div>
+  <h3>Not named</h3>
+  <div class="accordion-list">
+    <collapse-wrapper class="accordion" placeholder="Header">
+      <div slot="header">Header</div>
+      <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, voluptatibus aspernatur? Sed vitae natus sequi amet voluptate sunt asperiores, quia quasi. Labore obcaecati quidem, nam quasi saepe ipsam culpa libero!
+      </div>
+    </collapse-wrapper>
+    <collapse-wrapper class="accordion" placeholder="Header">
+      <div class="content">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, voluptatibus aspernatur? Sed vitae natus sequi amet voluptate sunt asperiores, quia quasi. Labore obcaecati quidem, nam quasi saepe ipsam culpa libero!
+      </div>
+    </collapse-wrapper>
+    <collapse-wrapper class="accordion">
+      <span slot="header">Header</span>
+      <div class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt dolor magnam neque ea cupiditate, corrupti ratione accusantium quidem aspernatur deleniti sunt itaque, sequi quae animi quibusdam ex enim placeat suscipit!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt dolor magnam neque ea cupiditate, corrupti ratione accusantium quidem aspernatur deleniti sunt itaque, sequi quae animi quibusdam ex enim placeat suscipit!
+      </div>
+    </collapse-wrapper>
+  </div>
+</body>
+</html>
