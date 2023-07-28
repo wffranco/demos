@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# go inside a running docker container
+
+CONTAINERS=$(docker ps | awk '{print $2}' | tail -n+2)
+if [[ -z "$CHECK_CONTAINERS" ]]; then
+  echo "No hay contenedores en ejecución."
+  exit 1
+fi
+
+echo "Elementos: ${#CONTAINERS[@]}"
+
+echo "Selecciona un nombre:"
+
+select SELECTED in "${CONTAINERS[@]}"; do
+  # Verifica si la opción seleccionada es válida
+  if [[ -n "$SELECTED" ]]; then
+    echo "Seleccionaste: $SELECTED"
+    break
+  else
+    echo "Opción no válida. Intenta nuevamente."
+  fi
+done

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+IMAGE_SAIL=laravelsail/php82-composer:latest
+
+if [ ! -f ./vendor/bin/sail ]; then
+  docker run -it --rm -u "$(id -u):$(id -g)" -v $(pwd):/var/www/html -w /var/www/html \
+    $IMAGE_SAIL \
+    composer install --ignore-platform-reqs
+fi
+
+if [ ! -f ./docker-compose.yml ]; then
+  docker run -it --rm -u "$(id -u):$(id -g)" -v $(pwd):/var/www/html -w /var/www/html \
+    $IMAGE_SAIL \
+    php artisan sail:install
+fi
+
+./vendor/bin/sail $@

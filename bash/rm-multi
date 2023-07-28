@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# find a target subfiles/subfolders inside the current folder, and remove all
+find . -name "$1" -prune -exec rm -rf {} \;
